@@ -1,0 +1,181 @@
+<html>
+<head>
+<style>
+#element_to_pop_up { 
+    background-color:#fff;
+    /*border-radius:15px;*/
+    color:#000;
+    display:none; 
+    padding:20px;
+    min-width:400px;
+    min-height: 180px;
+	width:470px;
+}
+.b-close{
+    cursor:pointer;
+    position:absolute;
+    right:10px;
+    top:5px;
+}
+#email {
+  float: left;
+  width: 74%;
+}
+
+#email > input {
+  color: #5d5d5d;
+  width: 100%;
+  font-weight:700;
+}
+#newsletter_subscribe > div {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 80%;
+}
+#subscribe {
+  float: left;
+  width: 25% !important;
+  padding-top: 6px !important;
+}
+
+#popup_submit {
+  display: block;
+  font-size: 12px;
+  line-height: 34px;
+  margin: -8px 0 0;
+  padding-bottom: 0;
+  text-align: center;
+  width: 100%;
+  margin-left: 4px !important;
+}
+#popup_title {
+  font: 20px/34px "CenturyGothicRegular",Century Gothic,Verdana,sans-serif;
+   background: rgba(0, 0, 0, 0) url("<?php echo $this->getSkinUrl('images/popup_box_block1.png'); ?>") no-repeat scroll right top;
+  text-align: left;
+  width: 350px;
+  color: #696969;
+  float: left;
+  text-decoration: none;
+  height: 85px;
+  overflow: hidden;
+  width: 440px;
+
+}
+
+.popup_box_lines {
+  background: transparent url("<?php echo $this->getSkinUrl('images/popup_box_lines.png'); ?>") no-repeat scroll 0 0;
+  clear: both;
+  display: block;
+  height: 1px;
+  margin: 5px 0;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+#popup_text {
+	font: 11px/1.55 Tahoma,Helvetica,sans-serif;
+	color: #696969;
+	float: left;
+    text-decoration: none;
+	padding-bottom: 5px;
+
+}
+
+</style>
+<script src="<?php echo $this->getSkinUrl('js/jquery.bpopup.min.js'); ?>"></script>	
+<script src="<?php echo $this->getSkinUrl('js/cookie.js'); ?>"></script>	
+</head>
+<body>
+<?php
+$enable = Mage::getStoreConfig('alice/alice_group/alice_popup_enable');
+$title = Mage::getStoreConfig('alice/alice_group/alice_popup_title');
+$popUpText = Mage::getStoreConfig('alice/alice_group/alice_popup_popup_text');
+$noOfDays = Mage::getStoreConfig('alice/alice_group/alice_popup_cookie_lifetime');
+$popupLoadTime = Mage::getStoreConfig('alice/alice_group/alice_popup_popup_load_time');
+$backgroundImage = Mage::getStoreConfig('alice/alice_group/logo');
+$buttonBkgColor = Mage::getStoreConfig('alice/alice_group/alice_popup_button_bkg_color');
+$buttonHoverColor = Mage::getStoreConfig('alice/alice_group/alice_popup_button_hover_color');
+$buttonTextColor = Mage::getStoreConfig('alice/alice_group/alice_popup_button_text_color');
+if($enable == '1'):
+?>
+<div id="element_to_pop_up">
+    <a class="b-close">x<a/>
+    
+	<div id="popup_title">
+		<?php $Title = ($title != null) ? $title : '50% Sale on Category Products';?>
+		<?php echo '<b>'.$Title.'</b><br>'; ?><!--dynamic title of popup-->
+    </div>
+	<div class="popup_box_lines"></div>
+	<div id="popup_text">
+		<?php $Text = ($popUpText != null) ? $popUpText : 'Would you like to be one of the first to receive exclusive information about the latest collections, offers and events from this online shop? Then just subscribe to our free newsletter now and get a voucher to the value of 5 € for your next purchase in our Online-Shop. ';?>
+		<?php echo $Text; ?><!--dynamic content of popup-->
+	</div>
+	<div class="popup_box_lines"></div>
+	<form id="newsletter_subscribe">
+		<div id="email">
+			<input type="text" name="Email" value="Email">
+		</div>
+		<div id="subscribe">
+			<!--<input type="submit" name="submit" value="Subscribe">-->
+			<a id="popup_submit" href="javascript:void(0)">Subscribe</a>
+		</div>
+	</form>
+</div>
+<script>	
+jQuery(function() {
+
+           if (jQuery.cookie('newsletter') != '1') { // Check for cookie
+         //$.cookie('mail', '1', { expires: 7, path: '/' });
+			 var popupLoadTime = "<?php echo $popupLoadTime ?>";
+				setTimeout(function() {					 
+					jQuery('#element_to_pop_up').bPopup();
+				}, popupLoadTime);
+             
+                    
+            };
+			
+			  jQuery('.b-close').click(function(){
+				 var noOfDays = "<?php echo $noOfDays ?>";
+				 
+				 parent.jQuery("#element_to_pop_up").bPopup().close();
+		   
+				jQuery.cookie('newsletter', '1', { expires: noOfDays, path: '/' });
+		   
+			});
+        });
+</script>
+<?php if($backgroundImage):?>
+<style>
+	#element_to_pop_up {
+		background: url(<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);?>theme/<?php echo $backgroundImage; ?>) no-repeat;
+	}
+</style>
+<?php endif; ?>
+<?php endif; ?>
+<?php
+	$bCkHoverColor = ($buttonHoverColor != null) ? $buttonHoverColor : '#aaa';
+	$bCkTextColor = ($buttonTextColor != null) ? $buttonTextColor : '#fff';
+	$bCkBkgColor = ($buttonBkgColor != null) ? $buttonBkgColor : '#000';
+?>
+<script>
+jQuery(document).ready(function(){
+		var hovercolor = "<?php echo $bCkHoverColor ?>";
+		var bgcolor = "<?php echo $bCkBkgColor ?>";
+		var textcolor = "<?php echo $bCkTextColor ?>";
+		
+		jQuery("#popup_submit").mouseenter(function(){
+			jQuery("#popup_submit").css("background-color", hovercolor);
+		});
+		
+		jQuery("#popup_submit").mouseout(function(){
+			jQuery("#popup_submit").css("background-color", bgcolor);
+		});
+
+        jQuery("#popup_submit").css("color", textcolor);
+        jQuery("#popup_submit").css("background-color", bgcolor);
+    
+
+});
+</script>
+</body>
+</html>

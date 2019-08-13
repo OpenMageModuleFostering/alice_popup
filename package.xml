@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package>
+    <name>Alice_Popup</name>
+    <version>1.0.0</version>
+    <stability>beta</stability>
+    <license uri="https://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>This extension helps you to increase sales and customers for your site. </summary>
+    <description>Functionalities of Alice Popup Extension :&#xD;
+&#xD;
+1.	Enable/Disable Popup Extension.&#xD;
+&#xD;
+2.	Manages Popup Title from Admin.&#xD;
+&#xD;
+3.	Manages Background Image of Popup.&#xD;
+&#xD;
+4.	Manages Popup Text from Admin.&#xD;
+&#xD;
+5.	Manages Cookie Lifetime of Popup.&#xD;
+&#xD;
+6.	Manages Popup Load Time.&#xD;
+&#xD;
+7. Manages Button Colors from Admin</description>
+    <notes>This is  our first newsletter extension for magento1.x and we will be glad to provide this extension for magento2.0</notes>
+    <authors><author><name>Alice Infoweb Pvt ltd.</name><user>MAG000074275</user><email>avi@webmagentocommerce.com</email></author></authors>
+    <date>2016-04-12</date>
+    <time>06:46:54</time>
+    <contents><target name="magelocal"><dir name="Alice"><dir name="Popup"><dir name="Helper"><file name="Data.php" hash="f121646298baec3bde5f1c44979980d3"/></dir><dir name="controllers"><file name="IndexController.php" hash="6e9c39d3352866da1408b52c853237f6"/></dir><dir name="etc"><file name="config.xml" hash="02e2f7d7f683d6fbcb20a03d7de47c82"/><file name="system.xml" hash="5b38223e0c6503e870d3580b74373a80"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Alice_Popup.xml" hash="26d9dc4463b0f84d264fb3aa002b4d1f"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="rwd"><dir name="default"><dir name="layout"><file name="alice_popup.xml" hash="98ee39eb43d74f45ec8a80a1be02922a"/></dir><dir name="template"><dir name="alice"><file name="popup.phtml" hash="9ebdc254f1cf4fe74905f56134696280"/></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="rwd"><dir name="default"><dir name="images"><file name="popup_box_block1.png" hash="05baf7a905b6feefc25ffbfb517b285e"/><file name="popup_box_lines.png" hash="a74efb43c267534b40e29c9674b91423"/></dir><dir name="js"><file name="cookie.js" hash="b2860c25a4c8a407faeab4708229518a"/><file name="jquery.bpopup.min.js" hash="204ec5bd1f07bb6eb37b0da75badfc16"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

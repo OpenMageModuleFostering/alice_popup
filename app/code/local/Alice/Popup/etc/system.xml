@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <alice translate="label" module="alice">
+            <label>Alice Popup</label>
+            <sort_order>100</sort_order>
+        </alice>
+    </tabs>
+    <sections>
+        <alice translate="label" module="alice">
+            <label>Popup Settings</label>
+            <tab>alice</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+ 
+            <groups>
+                <alice_group translate="label" module="alice">
+                    <label>Popup Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+ 
+                    <fields>
+                        <alice_popup_enable translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </alice_popup_enable>
+                        <alice_popup_title translate="label">
+                            <label> Title</label>                          
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </alice_popup_title>
+                        <alice_popup_cookie_lifetime translate="label">
+                            <label> Cookie Lifetime (In days)</label>                            
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </alice_popup_cookie_lifetime>
+                        <alice_popup_popup_load_time translate="label">
+                            <label> Popup Load Time (In Secs)</label>                            
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </alice_popup_popup_load_time>
+						<alice_popup_popup_text translate="label">
+                            <label> Popup Text</label>                            
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </alice_popup_popup_text>
+                        
+                        <alice_popup_button_bkg_color translate="label">
+                            <label> Button Background Color </label>                           
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </alice_popup_button_bkg_color>
+                        <alice_popup_button_hover_color translate="label">
+                            <label> Button Hover Color</label>                            
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </alice_popup_button_hover_color>
+                        <alice_popup_button_text_color translate="label">
+                            <label>Button Text Color </label>                            
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </alice_popup_button_text_color>
+		
+							<logo translate="label comment">
+							<label>Background Image</label>
+							<comment>Allowed file types: jpeg, gif, png.</comment>
+							<frontend_type>image</frontend_type>
+							<backend_model>adminhtml/system_config_backend_image</backend_model>
+							<upload_dir config="system/filesystem/media" scope_info="1">theme</upload_dir>
+							<base_url type="media" scope_info="1">theme</base_url>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							</logo>
+						
+                    </fields>
+                </alice_group>
+            </groups>
+        </alice>
+    </sections>
+</config>

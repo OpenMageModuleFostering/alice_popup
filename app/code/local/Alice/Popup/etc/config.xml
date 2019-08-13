@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+ 
+<config>
+    <modules>
+        <Alice_Popup>
+            <version>0.1.0</version>
+        </Alice_Popup>
+    </modules>
+	<global>
+	 <helpers>
+            <alice>
+                <class>Alice_Popup_Helper</class>
+            </alice>
+        </helpers>
+	</global>
+	 <frontend>
+        <routers>
+            <alice>
+                <use>standard</use>
+                <args>
+                    <module>Alice_Popup</module>
+                    <frontName>alice</frontName>
+                </args>
+            </alice>
+        </routers>
+		<layout>
+			<updates>
+			  <alice>
+				<file>alice_popup.xml</file>
+			  </alice>
+			</updates>
+		</layout>
+    </frontend>  
+	<adminhtml>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <alice>
+                                        <title>Alice - All</title>
+                                    </alice>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</adminhtml>
+</config>

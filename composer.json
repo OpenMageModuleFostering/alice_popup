@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Alice_Popup",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "This extension helps you to increase sales and customers for your site. ",
+    "authors": [
+    {
+        "name": "Alice Infoweb Pvt ltd.",
+        "email": "avi@webmagentocommerce.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
